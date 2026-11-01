@@ -88,7 +88,7 @@ content/*.json            各语言文案对照参考
 - `wrangler.jsonc`：Worker `leoknoxme`。`wrangler deploy` 先运行 `python3 scripts/build.py`，只发布 `dist/`（README、VALIDATION、content/、脚本、测试不公开）。
 - `not_found_handling: "404-page"`：未知路径返回 `404.html`（404 状态码）。404 页使用根路径绝对引用，任意深度都能正确显示。
 - CSS/JS 及 `language.mjs` 导入带内容哈希 `?v=`；`/assets/*` 缓存 1 天 + stale-while-revalidate 7 天。
-- `_headers` 增加 HSTS（不含 includeSubDomains / preload）；`/favicon.ico` 301 到 svg。
+- HSTS 由 Cloudflare zone 设置统一下发（`_headers` 不再重复）；`/favicon.ico` 301 到 svg。
 - 联系方式：邮箱 + Telegram `@leospmbot`（联系区、页脚、JSON-LD `sameAs`）。
 
 ### Cloudflare 后台（域名级，仓库管不到）

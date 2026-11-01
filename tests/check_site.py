@@ -29,7 +29,7 @@ class Doc(HTMLParser):
 
 
 headers = (DIST / '_headers').read_text()
-assert 'Strict-Transport-Security' in headers
+assert 'Strict-Transport-Security' not in headers  # HSTS comes from the Cloudflare zone setting
 pages = [(lang, route, DIST / route / 'index.html') for lang, route in LANGS.items()] + [('en', '404.html', DIST / '404.html')]
 count = 0
 for lang, route, path in pages:
