@@ -1,0 +1,207 @@
+{
+  "title": "Leo Knox | Curious, independent, and here for the interesting bits",
+  "desc": "Meet Leo Knox: curious, independent, and hands-on. Technology, Minecraft, visual experiences, cities, AI, fitness, coffee, and how I make sense of the world.",
+  "nav": [
+    "About me",
+    "How I think",
+    "Interests",
+    "Say hello"
+  ],
+  "menu": "Menu",
+  "skip": "Skip to content",
+  "home": "Leo’s personal homepage",
+  "navlabel": "Main navigation",
+  "langlabel": "Choose a language",
+  "hero": "Hi, I’m <span>Leo.</span><br>I take things seriously.<br><em>And have fun with them.</em>",
+  "intro": "I ask why, then like to try things for myself.<br>Facts and logic matter to me. So do games, good jokes, and new experiences.",
+  "down": "Scroll down. Get to know me.",
+  "beyond": "More than code.",
+  "paper": "CURIOUS · INDEPENDENT · A LITTLE PLAYFUL",
+  "caption": "This page, like me, is still taking shape.",
+  "strip": [
+    "Stay curious",
+    "Think for myself",
+    "Serious, but playful",
+    "Still becoming"
+  ],
+  "personlabel": "A closer look",
+  "personhead": "Thoughtful and playful.<br><span>Both are me.</span>",
+  "personintro": "Sometimes I follow a question all the way down.<br>Sometimes I just want to see how far a ridiculous idea can go.",
+  "traits": [
+    [
+      "?",
+      "Ask why. Then try it.",
+      "Knowing what something is rarely feels like the end. I explore, experiment, look at the results, and adjust what I think.",
+      "Curiosity likes a little action."
+    ],
+    [
+      "◎",
+      "A good answer still needs evidence.",
+      "An answer from an authority or an AI is still worth checking. I want to know what is fact, what is inference, and what is a guess.",
+      "Independent judgment. Room to change."
+    ],
+    [
+      "✳",
+      "Serious about details. Open to absurdity.",
+      "I like memes, teasing, and ideas that go a little off the rails. Careful thinking and a sense of humor belong in the same room.",
+      "A little internet weirdness included."
+    ]
+  ],
+  "mindhead": "I care about<br><span>how a conclusion holds up.</span>",
+  "mindintro": "I put individual problems back into their systems, look for causes, and leave room for new evidence.<br>Thinking is a loop, rather than a verdict.",
+  "steps": [
+    "Observe & analyze",
+    "Find patterns",
+    "Get to the core",
+    "Apply elsewhere",
+    "Test in practice",
+    "Revise",
+    "Bring the feedback back"
+  ],
+  "mindnote": "Separate facts from opinions. Look for root causes. Change the judgment when the evidence changes.",
+  "habithead": "A digital life.<br><span>A human pace.</span>",
+  "habitintro": "I tinker with tools, notice patterns,<br>and make room for small experiences.",
+  "habits": [
+    [
+      "Keep a record. Compare. Reflect.",
+      "I like keeping useful data and the steps that matter, comparing changes over time, and looking for the longer pattern."
+    ],
+    [
+      "Make my tools work my way.",
+      "I enjoy configuring and reshaping my digital environment. Transparency, flexibility, and having a choice matter to me."
+    ],
+    [
+      "Notice how things are going.",
+      "I record training and pay attention to how I feel. Beyond the gym, I also make small adjustments to find what works for me."
+    ],
+    [
+      "Leave room for things that are just interesting.",
+      "Coffee I enjoy, a beautiful video, or a good conversation can make a day better. They do not need a grand justification."
+    ]
+  ],
+  "interesthead": "Curiosity reaches<br><span>beyond the screen.</span>",
+  "interestintro": "Some interests start with a question. Others start with an experience.<br>The discoveries along the way keep me interested.",
+  "interestlabel": "Choose an interest",
+  "interests": [
+    [
+      "technology",
+      "Technology & the internet",
+      "HOW THINGS WORK",
+      "</>",
+      "From network protocols to operating systems, servers, and security, I like understanding the mechanisms—and building and testing things myself.",
+      "What can it do? And how does it work?"
+    ],
+    [
+      "minecraft",
+      "Minecraft & virtual worlds",
+      "WORLDS TO EXPLORE",
+      "▦",
+      "I enjoy the freedom to explore and create in Minecraft, along with the interactions, communities, and players from different language backgrounds.",
+      "There is a world to explore, and people to share it with."
+    ],
+    [
+      "visuals",
+      "Devices & visual experiences",
+      "DETAILS YOU CAN FEEL",
+      "◉",
+      "Displays, HDR, high refresh rates, hardware, and the feel of a system catch my attention. Specs help, but I still want to see the result for myself.",
+      "Sometimes a beautiful image is its own reward."
+    ],
+    [
+      "cities",
+      "Travel & cities",
+      "OUTSIDE THE SCREEN",
+      "↗",
+      "I enjoy different cities and environments, noticing transport, infrastructure, public services, and ways of living. Travel is also a way of understanding how the world works.",
+      "Look at the view. Then look at how the city runs."
+    ],
+    [
+      "ai",
+      "AI & what comes next",
+      "TOOLS AND QUESTIONS",
+      "✧",
+      "I use AI, but I also question its limits, reasoning, and mistakes. It is both a collaborator and something I want to understand better.",
+      "Embrace the tool. Keep the judgment."
+    ],
+    [
+      "culture",
+      "Society, culture & internet humor",
+      "IDEAS WORTH SHARING",
+      "!?",
+      "An everyday event can lead me into a conversation about history, institutions, incentives, or behavior. Memes and wildly exaggerated ideas have a place too.",
+      "A conversation can go deep—or get delightfully weird."
+    ],
+    [
+      "fitness",
+      "Fitness & self-management",
+      "NOTICE THE PROGRESS",
+      "↟",
+      "Training, records, and observation help me understand how I am doing. I like having data alongside my own impressions when I look for progress.",
+      "Notice what changed. Adjust the next step."
+    ],
+    [
+      "coffee",
+      "Coffee & small everyday things",
+      "SMALL THINGS MATTER",
+      "~",
+      "Coffee that tastes right, a relaxed but interesting conversation, or a sudden idea can make an ordinary day more enjoyable.",
+      "Small things are worth paying attention to."
+    ]
+  ],
+  "principlehead": "A few things<br><span>I want to hold on to.</span>",
+  "principleintro": "Less of a manifesto. More of a reminder when making choices.",
+  "principles": [
+    [
+      "TRUTH",
+      "Facts before positions",
+      "Understand what happened before deciding how to judge it."
+    ],
+    [
+      "INDEPENDENCE",
+      "Keep my own judgment",
+      "Popularity and authority do not replace thinking."
+    ],
+    [
+      "VERIFICATION",
+      "Evidence, with room for uncertainty",
+      "Test what can be tested. Be honest about what remains unknown."
+    ],
+    [
+      "OPENNESS",
+      "Explore openly. Keep my autonomy.",
+      "Value open technology, the exchange of information, and digital autonomy."
+    ],
+    [
+      "GROWTH",
+      "Be wrong. Then revise.",
+      "Acknowledge the mistake, understand its cause, and use the feedback."
+    ],
+    [
+      "RESPECT",
+      "Respect time and good communication",
+      "Care about responsiveness, keeping my word, and conversations with substance."
+    ],
+    [
+      "PRAGMATISM",
+      "Let technology serve a real need",
+      "Consider cost, stability, and results. Complexity needs a reason."
+    ]
+  ],
+  "note": "Think carefully.<br><span>Stay playful.</span>",
+  "notecaption": "Explore the world. Leave a little room for imagination.",
+  "contacthead": "Getting to know someone<br>can start with<span> hello.</span>",
+  "contactintro": "A point of view, something funny,<br>or just a hello. All welcome.",
+  "copy": "Copy email",
+  "copied": "Copied ✓",
+  "copystatus": "Email copied.",
+  "copyfail": "Please copy manually: leo@leosoffice.com",
+  "friends": "Elsewhere",
+  "frienddev": "Projects & development",
+  "friendmonitor": "Server monitoring",
+  "footer": "A small corner of the internet, by Leo.",
+  "top": "Back to top ↑",
+  "error": "A little<br>wrong turn.",
+  "errorintro": "There is no page at this address.",
+  "errorback": "Back to my corner ↗",
+  "errortitle": "Page not found | Leo Knox"
+}
