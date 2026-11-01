@@ -2,23 +2,24 @@
 
 英文 / 繁体中文 / 简体中文。沿用暖白、陶土橙与深蓝的个人小册子风格，内容围绕性格、思维方式、习惯、兴趣和个人原则。
 
-纯 HTML + CSS + JavaScript，无构建依赖。仅本地修改，未上传 Sites、未部署、未改 Cloudflare/DNS。
+纯 HTML + CSS + JavaScript，运行时无依赖。仓库 `realLeoKnox/leoknoxme`，Cloudflare Workers 静态资源（Worker `leoknoxme`）自动部署，见「部署（2026-11-01）」。
 
 ## 本地预览
 
-双击 `preview.command`，访问 http://127.0.0.1:5680/ 。Ctrl+C 停止服务。
+双击 `preview.command`（先构建再预览 dist/），访问 http://127.0.0.1:5680/ 。Ctrl+C 停止服务。
 
-也可在本站目录运行：
+也可运行：
 
 ```sh
-python3 -m http.server 5680 --bind 127.0.0.1
+python3 scripts/build.py && python3 tests/check_site.py
+npx wrangler dev   # 模拟线上（_headers、_redirects、真实 404）
 ```
 
 | 语言 | 本地路径 | 正式规范地址 |
 | --- | --- | --- |
-| English（默认） | `/` | `https://leoknox.me/` |
-| 繁體中文 | `/zh-hant/` | `https://leoknox.me/zh-hant/` |
-| 简体中文 | `/zh-hans/` | `https://leoknox.me/zh-hans/` |
+| English（默认） | `/` | `https://www.leoknox.me/` |
+| 繁體中文 | `/zh-hant/` | `https://www.leoknox.me/zh-hant/` |
+| 简体中文 | `/zh-hans/` | `https://www.leoknox.me/zh-hans/` |
 
 ## 内容更新
 
@@ -46,7 +47,7 @@ python3 -m http.server 5680 --bind 127.0.0.1
 
 三种语言都包含：
 
-- `https://leoknox.dev/`：项目与开发。
+- `https://www.leoknox.dev/`：项目与开发。
 - `https://agent.leoknox.us/`：服务器监控。
 
 仅展示用户指定的链接，不嵌入监控数据或声称在线状态已验证。外链同标签页打开；没有自动访问、登录或调用监控服务。
@@ -79,28 +80,22 @@ assets/og-*.png           三种语言分享图
 content/*.json            各语言文案对照参考
 ```
 
-网页直接使用各版 HTML，不在运行时读取 content JSON；JSON 是文案参考快照，修改后需同步对应 HTML。`_headers` 使用严格 CSP，修改内联 JSON-LD 后要更新 script SHA-256 hash。
+网页直接使用各版 HTML，不在运行时读取 content JSON；JSON 是文案参考快照，修改后需同步对应 HTML。`_headers` 使用严格 CSP；`scripts/build.py` 会自动重算内联 JSON-LD 的 script SHA-256 hash、生成 sitemap.xml 与 robots.txt。
 
-## 将来部署（尚未执行）
+## 部署（2026-11-01）
 
-Cloudflare Pages 无构建静态站：上传 index.html、zh-hant/、zh-hans/、404.html、assets/、robots.txt、sitemap.xml、_headers、_redirects。文档、content/、preview.command、cloudflare-redirect-rule.json 不必上传。
+- 规范主站 `https://www.leoknox.me/`。`scripts/build.py` 的 `BASE` 统一控制 sitemap / robots；HTML 中 canonical、hreflang、og、JSON-LD 均为 www。
+- `wrangler.jsonc`：Worker `leoknoxme`。`wrangler deploy` 先运行 `python3 scripts/build.py`，只发布 `dist/`（README、VALIDATION、content/、脚本、测试不公开）。
+- `not_found_handling: "404-page"`：未知路径返回 `404.html`（404 状态码）。404 页使用根路径绝对引用，任意深度都能正确显示。
+- CSS/JS 及 `language.mjs` 导入带内容哈希 `?v=`；`/assets/*` 缓存 1 天 + stale-while-revalidate 7 天。
+- `_headers` 增加 HSTS（不含 includeSubDomains / preload）；`/favicon.ico` 301 到 svg。
+- 联系方式：邮箱 + Telegram `@leospmbot`（联系区、页脚、JSON-LD `sameAs`）。
 
-在 Pages Custom domains 中绑定 `leoknox.me` 和 `www.leoknox.me`，按实际托管项目给出的目标配置 DNS（根域名名称显示为 `@`），并确认两者 HTTPS 证书有效。
+### Cloudflare 后台（域名级，仓库管不到）
 
-域名级 Redirect Rules → Single Redirect：
-
-```text
-匹配：(http.host eq "www.leoknox.me") or (http.host eq "leoknox.me" and not ssl)
-目标：concat("https://leoknox.me", http.request.uri.path)
-状态码：301
-Preserve query string：启用
-```
-
-`cloudflare-redirect-rule.json` 是单条规则参考对象，不是完整 ruleset API 请求，本地文件不会执行云端修改。Pages `_redirects` 不支持来源主机名匹配的域名级跳转，www 需在域名规则中配置。
-
-若有默认生产 `*.pages.dev` 地址，另行跳转到正式域名，并处理预览分支访问或 noindex。Python 本地服务不执行 Pages 响应头、301 文件或自定义 404。
-
-上线后验证：三个规范页面 200；HTTP/www 301 保留路径与查询参数且无循环；无效 URL 真正返回 404；SEO 文件与图像可访问；随后在真实 Search Console/Bing 账号中验证域名并提交站点地图。本次没有执行这些云端步骤。
+1. leoknox.me → SSL/TLS → Edge Certificates：打开 **Always Use HTTPS**。
+2. leoknox.me → Rules → Redirect Rules：按 `cloudflare-redirect-rule.json` 建一条 301，根域名 → `https://www.leoknox.me` 同路径，保留查询参数。
+3. 部署项目连接本仓库 main 分支（部署命令 `npx wrangler deploy`）。
 
 ## 官方参考
 

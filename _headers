@@ -1,8 +1,9 @@
 /*
+  Strict-Transport-Security: max-age=31536000
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-kVrPkW221eXwTXf0IHCK5B0FHyU3WG8Sl/WWDIi9Hi8=' 'sha256-FFOyQs2AhKd03D7JWa/an3XKuSLf+R1WcpvKaTa4hn8=' 'sha256-amknWWmmJSnG0ofYBwYsN2fDKEnqIkfX31CpktXR0Eg=' 'sha256-mM1plx7GNR8bhlMJ8uEBuPWisb1frcC6XL3J+7ucRMc='; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-yUcaNpxHaa2DzX35oCx9Uy/+UfrgJvBE6ynWiQVq6sI=' 'sha256-tVzCd9jeNjJCXF+D/7VgGRPKs+43mjZPaNbbZQkHJfI=' 'sha256-RYCZCaEt1DdKLWmpHUemJpM/e+B9eeUdfQU9syGk9ZY=' 'sha256-b0ZOJgOt4f/W/hIDyjdKMdb9XWPLT+yqJk0ekpKwpBM='; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'
 /assets/*
-  Cache-Control: public, max-age=3600
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

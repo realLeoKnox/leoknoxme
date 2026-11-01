@@ -28,3 +28,9 @@
 - 无实际域名部署；HTTPS、www 301、真实响应头/404、收录与真实社交平台分享卡片仍待上线后验证。
 - 友情链接仅验证标记与用户指定目标一致，没有访问监控平台、读取数据或检查在线状态。
 - 未上传 Sites、未修改 Cloudflare/DNS、未发送邮件。
+
+## 2026-11-01 迁入仓库与上线优化
+
+- `python3 tests/check_site.py`：3 语言 + 404，64 个本地引用、www canonical/hreflang、CSP hash、资源版本号、dist 不含私有文件，全部通过。
+- `wrangler deploy --dry-run` 与本地 wrangler 模拟：只发布 dist/ 19 个文件；未知深层路径返回带样式 404；README / content 返回 404；favicon.ico 301；HSTS 响应头存在。
+- 浏览器截图：英/简/繁 联系区与页脚的 Telegram 链接，桌面 1440 与手机 390 布局正常；修复 404 标题字体（原为无衬线回退）。

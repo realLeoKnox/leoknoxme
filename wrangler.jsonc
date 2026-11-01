@@ -1,0 +1,16 @@
+// Cloudflare Workers static-assets deployment for www.leoknox.me.
+// Workers Builds runs `npx wrangler deploy`: build.command runs first,
+// then ONLY ./dist is published (no README, notes or content snapshots).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "leoknoxme",
+  "compatibility_date": "2026-10-01",
+  "build": {
+    "command": "python3 scripts/build.py"
+  },
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
